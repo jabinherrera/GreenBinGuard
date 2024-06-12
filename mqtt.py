@@ -56,11 +56,17 @@ def on_connect(client, userdata, flags, rc):
     print("Connected to ThingsBoard with result code " + str(rc))
 
 def on_message(client, userdata, msg):
-    global nivel_lleno_actual
-    payload = json.loads(msg.payload)
-    if 'reset' in payload and payload['reset'] == True:
-        nivel_lleno_actual = 0
-        print("Nivel de llenado restablecido a 0 por comando remoto")
+    global nivel_lleno_actual, ultimo_nivel_enviado
+    try:
+        payload = json.loads(msg.payload)
+        if isinstance(payload, dict) and 'params' in payload and 'reset' in payload['params'] and payload['params']['reset'] == True:
+            nivel_lleno_actual = 0
+            ultimo_nivel_enviado = 0
+            data = {'nivel_lleno': nivel_lleno_actual}
+            client.publish('v1/devices/me/telemetry', json.dumps(data))
+            print("Nivel de llenado restablecido a 0 por comando remoto")
+    except Exception as e:
+        print(f"Error procesando mensaje: {e}")
 
 client = mqtt.Client(CLIENT_ID)
 client.username_pw_set(USERNAME, PASSWORD)
@@ -84,7 +90,6 @@ try:
         if estado_actual != estado_anterior:
             data = {'magnetico': estado_actual}
             client.publish('v1/devices/me/telemetry', json.dumps(data))
-            print("Datos enviados a ThingsBoard:", data)
             estado_anterior = estado_actual  # Actualizar el estado anterior
 
         # Medir la distancia y calcular el nivel de llenado
