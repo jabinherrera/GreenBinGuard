@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-# iot-app-v1
+# GreenBinGuard
+Proyecto IOT
 
 ## Build Setup
 
@@ -67,7 +67,4 @@ More information about the usage of this directory in [the documentation](https:
 This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
-=======
-# GreenBinGuard
-Proyecto IOT
->>>>>>> c70201d789335e01a051f2736504ad139a159a15
+
