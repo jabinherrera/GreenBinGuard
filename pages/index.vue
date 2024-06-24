@@ -1,5 +1,7 @@
+import DashboardGBG from "components/DashboardGBG.vue";
+
 <template>
-  <Dashboard />
+<DashboardGBG />
 </template>
 
 <script>

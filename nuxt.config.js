@@ -18,8 +18,14 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
-
+  plugins: [
+    '~/plugins/socket.client.js',
+    '~/plugins/axios.js'
+  ],
+  publicRuntimeConfig: {
+    apiBaseURL: process.env.API_BASE_URL || 'https://iot.ceisufro.cl:8080/api',
+    apiToken: process.env.API_TOKEN || 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwLm5hdmFycmV0ZTA2QHVmcm9tYWlsLmNsIiwidXNlcklkIjoiODM3YTZlZjAtMWJiZS0xMWVmLTlhZTAtNDVkMTA5MDJmN2I1Iiwic2NvcGVzIjpbIlRFTkFOVF9BRE1JTiJdLCJzZXNzaW9uSWQiOiI0ZDBkNDVhZC01ODliLTQ5MTQtOGJhOC0wM2RlNmI0OTFkZTIiLCJpc3MiOiJ0aGluZ3Nib2FyZC5pbyIsImlhdCI6MTcxOTIzMTc3NCwiZXhwIjoxNzE5MjQwNzc0LCJmaXJzdE5hbWUiOiJQcmlzY2lsYSIsImxhc3ROYW1lIjoiTmF2YXJyZXRlIiwiZW5hYmxlZCI6dHJ1ZSwiaXNQdWJsaWMiOmZhbHNlLCJ0ZW5hbnRJZCI6IjhlZTM1NDEwLTFiYjgtMTFlZi05YWUwLTQ1ZDEwOTAyZjdiNSIsImN1c3RvbWVySWQiOiIxMzgxNDAwMC0xZGQyLTExYjItODA4MC04MDgwODA4MDgwODAifQ.oaqLhE_-CFZQ9npfwUv0K--lCmru4u5-sJSfhij2i6YMz_jmv4hhDxa9oRAB1ke4An_tFwPtk2OSCUK2d-0haA'
+  },
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
