@@ -17,11 +17,10 @@
     "bootstrap": "^4.6.2",
     "bootstrap-vue": "^2.22.0",
     "core-js": "^3.25.3",
-    "mqtt": "^5.7.2",
     "nuxt": "^2.15.8",
+    "swagger-js": "^1.0.0",
     "socket.io-client": "^4.7.5",
     "vue": "^2.7.10",
-    "vue-mqtt": "^2.0.3",
     "vue-server-renderer": "^2.7.10",
     "vue-template-compiler": "^2.7.10"
   },
