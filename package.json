@@ -18,11 +18,8 @@
     "bootstrap-vue": "^2.22.0",
     "core-js": "^3.25.3",
     "nuxt": "^2.15.8",
-<<<<<<< HEAD
     "swagger-js": "^1.0.0",
-=======
     "socket.io-client": "^4.7.5",
->>>>>>> d55c83e8eda082907e53f25a19fa25b8e26847f9
     "vue": "^2.7.10",
     "vue-server-renderer": "^2.7.10",
     "vue-template-compiler": "^2.7.10"
