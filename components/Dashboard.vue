@@ -43,7 +43,7 @@ export default {
   methods: {
     connectMQTT() {
       const { ...options } = this.connection
-      const connectUrl = 'mqtt://${this.THINGSBOARD_HOST}:${this.THINGSBOARD_PORT}'
+      const connectUrl = 'mqtt://' + this.THINGSBOARD_HOST + ':' + this.THINGSBOARD_PORT
 
       try {
         this.client = mqtt.connect(connectUrl, options)
