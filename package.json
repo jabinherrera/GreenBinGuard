@@ -1,0 +1,20 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "chart.js": "^4.4.3",
+    "nuxt": "^3.12.2",
+    "vue-chartjs": "^5.3.1"
+  },
+  "devDependencies": {
+    "nuxt-open-fetch": "^0.9.1"
+  }
+}
