@@ -3,14 +3,17 @@
       <doughnut-chart :chart-data="datacollection" :options="chartOptions"></doughnut-chart>
     </div>
   </template>
-  
+
   <script setup>
   import { Doughnut } from 'vue-chartjs'
   import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement, CategoryScale, LinearScale } from 'chart.js'
   import { ref, onMounted } from 'vue'
-  
+  import { useDataFetching } from '@/composables/useDataFetching'
+
+  const { nivelLlenado } = useDataFetching()
+
   ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale, LinearScale)
-  
+
   const datacollection = ref({
     labels: ['Lleno', 'Vacío'],
     datasets: [
@@ -21,12 +24,12 @@
       }
     ]
   })
-  
+
   const chartOptions = ref({
     responsive: true,
     maintainAspectRatio: false
   })
-  
+
   // Simulación de datos de llenado
   onMounted(() => {
     setInterval(() => {
@@ -35,7 +38,7 @@
     }, 5000)
   })
   </script>
-  
+
   <style scoped>
   .doughnut-chart-container {
     height: 150px;

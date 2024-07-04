@@ -8,6 +8,9 @@
   import { Line } from 'vue-chartjs'
   import { Chart as ChartJS, Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale, PointElement } from 'chart.js'
   import { ref, onMounted } from 'vue'
+  import { useDataFetching } from '@/composables/useDataFetching'
+
+  const { nivelLlenado, estadoMagnetico } = useDataFetching()
   
   ChartJS.register(Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale, PointElement)
   

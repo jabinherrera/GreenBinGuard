@@ -5,18 +5,33 @@
       </div>
       <div class="usage-info">
         <h4>Usos contenedor</h4>
-        <p class="usage-value">{{ usos }}</p>
+        <p class="usage-value">{{ count }}</p>
       </div>
     </div>
   </template>
   
   <script setup>
   import { ref } from 'vue'
+  import { useDataFetching } from '@/composables/useDataFetching'
   
   // Simulación de datos de uso
   const usos = 0
   
-  // Incrementar el uso del contenedor cada cierto tiempo (simulac
+  const { estadoMagnetico } = useDataFetching()
+
+  const numbers = ref([])
+
+  const count = computed(() => {
+    let count = 0;
+    let prevNum = estadoMagnetico.value;
+    for (let i = 0; i < numbers.value.length; i++) {
+      if (prevNum === 1 && numbers.value[i] === 0) {
+        count++;
+      }
+      prevNum = numbers.value[i];
+    }
+    return count;
+  })
   </script>
   
   <style scoped>
