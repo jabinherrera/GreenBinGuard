@@ -1,9 +1,7 @@
 <template>
   <div>
     <h1>Dashboard de Contenedores de Reciclaje</h1>
-    
     <h2>Datos de Telemetría</h2>
-      
     
   </div>
 </template>
